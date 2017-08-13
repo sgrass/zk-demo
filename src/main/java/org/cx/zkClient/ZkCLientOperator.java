@@ -6,13 +6,13 @@ import java.util.concurrent.TimeUnit;
 import org.I0Itec.zkclient.IZkChildListener;
 import org.I0Itec.zkclient.IZkDataListener;
 import org.I0Itec.zkclient.ZkClient;
+import org.cx.ConnStringConstant;
 
 public class ZkCLientOperator {
 
-  private final static String CONNECTSTRING = "172.16.120.130:2181,172.16.120.131:2181,172.16.120.132:2181";
 
   private static ZkClient getInstance() {
-    return new ZkClient(CONNECTSTRING, 5000);
+    return new ZkClient(ConnStringConstant.CONNECT_STRING, 5000);
   }
 
   public static void main(String[] args) throws InterruptedException {
