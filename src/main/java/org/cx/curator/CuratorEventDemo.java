@@ -38,6 +38,10 @@ public class CuratorEventDemo {
 
     /**
      * PatchChildrenCache
+     * StartMode三种模式
+     * Normal 初始化时候为空
+     * BUILD_INITIAL_CACHE 方法返回之前调用rebuild
+     * POST_INITIALIZED_EVENT 初始化后发送一个cacheevent的事件
      */
 
     PathChildrenCache pc=new PathChildrenCache(curatorFramework,"/event",true);

@@ -14,6 +14,12 @@ public class CuratorCreateDemo {
     CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient(ConnStringConstant.CONNECT_STRING, 5000, 5000, new ExponentialBackoffRetry(1000, 3));
     curatorFramework.start(); // start方法启动连接
 
+    /**
+     * ExponentialBackoffRetry()  衰减重试 
+     * RetryNTimes 指定最大重试次数
+     * RetryOneTime 仅重试一次
+     * RetryUnitilElapsed 一直重试知道规定的时间
+     */
     // fluent风格
     CuratorFramework curatorFramework1 = CuratorFrameworkFactory.builder().connectString(ConnStringConstant.CONNECT_STRING)
         .sessionTimeoutMs(5000)
